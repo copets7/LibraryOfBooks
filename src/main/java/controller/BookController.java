@@ -1,7 +1,9 @@
 package controller;
 
+import entiti.Book;
+
 public interface BookController {
-    void addBook();
+    void addBook(Book book);
     void dellBook();
     void searchBook(String name);
 }

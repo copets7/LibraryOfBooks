@@ -1,14 +1,15 @@
 package controller.impl;
 
 import controller.UserController;
+import entiti.User;
 import service.UserService;
 
 public class UserControllerImpl implements UserController {
     private UserService userService;
 
     @Override
-    public void addUser() {
-
+    public void addUser(User user) {
+    userService.addUser(user);
     }
 
     @Override
