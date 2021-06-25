@@ -1,4 +1,6 @@
 package controller.impl;
 
-public class UserControllerImpl {
+import controller.UserController;
+
+public class UserControllerImpl implements UserController {
 }
