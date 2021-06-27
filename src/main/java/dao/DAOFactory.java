@@ -1,5 +1,6 @@
 package dao;
 
+import dao.impl.BookDAOImpl;
 import dao.impl.UserDAOImpl;
 
 public class DAOFactory {
@@ -16,5 +17,8 @@ public class DAOFactory {
     }
     public UserDAO getUserDAO(){
         return new UserDAOImpl();
+    }
+    public BookDAO getBookDAO(){
+        return new BookDAOImpl();
     }
 }

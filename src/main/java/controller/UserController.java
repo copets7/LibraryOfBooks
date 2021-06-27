@@ -6,5 +6,4 @@ public interface UserController {
     void addUser(User user);
     void dellUser();
     void searchUser();
-
 }

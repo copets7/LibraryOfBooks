@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Connection {
+
     public static void writeToFileOneLine(String path, String logLine) {
         try (BufferedWriter bw =
                      new BufferedWriter(new FileWriter(path, true))) {

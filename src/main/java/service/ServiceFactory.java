@@ -1,5 +1,6 @@
 package service;
 
+import service.impl.BookServiceImpl;
 import service.impl.UserServiceImpl;
 
 public class ServiceFactory {
@@ -16,5 +17,9 @@ public class ServiceFactory {
     }
     public UserService getUserService(){
         return new UserServiceImpl();
+    }
+
+    public BookService getBookService(){
+        return new BookServiceImpl();
     }
 }

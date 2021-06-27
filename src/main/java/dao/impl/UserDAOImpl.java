@@ -7,7 +7,6 @@ import java.io.File;
 
 import static connection.Connection.getNumberOfRecords;
 import static connection.Connection.writeToFileOneLine;
-
 import static parser.csv.ParserUser.parseUser;
 
 public class UserDAOImpl implements UserDAO{
