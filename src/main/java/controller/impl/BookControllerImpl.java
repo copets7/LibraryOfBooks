@@ -5,6 +5,8 @@ import entiti.Book;
 import service.BookService;
 import service.ServiceFactory;
 
+import java.nio.file.Path;
+
 public class BookControllerImpl implements BookController {
     private BookService bookService;
 
@@ -19,6 +21,11 @@ public class BookControllerImpl implements BookController {
 
     public void searchBook(String name) {
 
+    }
+
+    @Override
+    public void viewAllBook() {
+    bookService.viewAllBook();
     }
 
 }

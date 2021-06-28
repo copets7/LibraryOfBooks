@@ -5,6 +5,8 @@ import entiti.User;
 import service.ServiceFactory;
 import service.UserService;
 
+import java.io.IOException;
+
 public class UserControllerImpl implements UserController {
     private UserService userService;
 
@@ -24,5 +26,10 @@ public class UserControllerImpl implements UserController {
     @Override
     public void searchUser() {
 
+    }
+
+    @Override
+    public void viewAllUsers() throws IOException {
+    userService.viewAllUsers();
     }
 }

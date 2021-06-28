@@ -5,6 +5,8 @@ import dao.DAOFactory;
 import entiti.Book;
 import service.BookService;
 
+import java.nio.file.Path;
+
 public class BookServiceImpl implements BookService {
     private BookDAO bookDAO;
 
@@ -24,5 +26,10 @@ public class BookServiceImpl implements BookService {
     @Override
     public void searchBook(String name) {
 
+    }
+
+    @Override
+    public void viewAllBook() {
+    bookDAO.viewAllBook();
     }
 }
