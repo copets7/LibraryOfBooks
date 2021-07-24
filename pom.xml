@@ -20,6 +20,7 @@
         </plugins>
     </build>
 
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -27,6 +28,19 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.8</version>
+        </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.25</version>
+            </dependency>
+
+
     </dependencies>
 
 </project>

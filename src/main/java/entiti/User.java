@@ -2,28 +2,27 @@ package entiti;
 
 public class User {
 
-    private String firsName;
-    private String lastName;
+    private String userName;
+    private String userRole;
 
-    public User(String firsName, String lastName) {
-
-        this.firsName = firsName;
-        this.lastName = lastName;
+    public User(String userName, String userRole) {
+        this.userName = userName;
+        this.userRole = userRole;
     }
 
-    public String getFirsName() {
-        return firsName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setFirsName(String firsName) {
-        this.firsName = firsName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getUserRole() {
+        return userRole;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
     }
 }

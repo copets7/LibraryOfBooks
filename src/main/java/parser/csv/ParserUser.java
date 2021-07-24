@@ -5,7 +5,7 @@ import entiti.User;
 
 public class ParserUser implements ParserProperties{
 
-    public static String parseUser(User user) {
+   /* public static String parseUser(User user) {
         StringBuilder contactLine = new StringBuilder();
         contactLine.append(SEPARATOR);
         contactLine.append(user.getFirsName());
@@ -23,5 +23,5 @@ public class ParserUser implements ParserProperties{
         contactLine.append(SEPARATOR);
         contactLine.append(book.getBookAuthor());
         return contactLine.toString();
-    }
+    }*/
 }

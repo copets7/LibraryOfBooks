@@ -2,13 +2,15 @@ package entiti;
 
 public class Book {
     private String bookName;
-    private String bookGenre;
     private String bookAuthor;
+    private String ISBN;
+    private String bookGenre;
 
-    public Book(String bookName, String bookGenre, String bookAuthor) {
+    public Book(String bookName, String bookAuthor, String ISBN, String bookGenre) {
         this.bookName = bookName;
-        this.bookGenre = bookGenre;
         this.bookAuthor = bookAuthor;
+        this.ISBN = ISBN;
+        this.bookGenre = bookGenre;
     }
 
     public String getBookName() {
@@ -19,19 +21,27 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public String getBookGenre() {
-        return bookGenre;
-    }
-
-    public void setBookGenre(String bookGenre) {
-        this.bookGenre = bookGenre;
-    }
-
     public String getBookAuthor() {
         return bookAuthor;
     }
 
     public void setBookAuthor(String bookAuthor) {
         this.bookAuthor = bookAuthor;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public String getBookGenre() {
+        return bookGenre;
+    }
+
+    public void setBookGenre(String bookGenre) {
+        this.bookGenre = bookGenre;
     }
 }

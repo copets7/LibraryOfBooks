@@ -9,19 +9,19 @@ import java.nio.file.Path;
 
 import static connection.Connection.getNumberOfRecords;
 import static connection.Connection.writeToFileOneLine;
-import static parser.csv.ParserUser.parseBook;
+
 
 
 public class BookDAOImpl implements BookDAO {
-    String ROOT_DIR = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" +File.separator + "resources";
-    String BOOKS_FILE_PATH = ROOT_DIR + File.separator+ "book.csv";
+   /* String ROOT_DIR = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" +File.separator + "resources";
+    String BOOKS_FILE_PATH = ROOT_DIR + File.separator+ "book.csv";*/
 
     @Override
     public void addBook(Book book) {
-        String contactLine = parseBook(book);
+      /*  String contactLine = parseBook(book);
         long id = getNumberOfRecords(BOOKS_FILE_PATH) + 1;
         contactLine = String.valueOf(id) + contactLine;
-        writeToFileOneLine(BOOKS_FILE_PATH, contactLine);
+        writeToFileOneLine(BOOKS_FILE_PATH, contactLine);*/
     }
 
     @Override
@@ -36,7 +36,7 @@ public class BookDAOImpl implements BookDAO {
 
     @Override
     public void viewAllBook() {
-        BufferedReader br = null;
+       /* BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(BOOKS_FILE_PATH));
         } catch (FileNotFoundException e) {
@@ -50,6 +50,6 @@ public class BookDAOImpl implements BookDAO {
                 e.printStackTrace();
             }
             System.out.println(line);
-        }
+        }*/
     }
 }
