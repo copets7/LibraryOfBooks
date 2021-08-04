@@ -1,16 +1,28 @@
 package entiti;
 
 public class Book {
+    private int id;
     private String bookName;
     private String bookAuthor;
     private String ISBN;
     private String bookGenre;
+    private int genre_id;
 
-    public Book(String bookName, String bookAuthor, String ISBN, String bookGenre) {
+    public Book(int id, String bookName, String bookAuthor, String ISBN, String bookGenre, int genre_id) {
+        this.id = id;
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.ISBN = ISBN;
         this.bookGenre = bookGenre;
+        this.genre_id = genre_id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getBookName() {
@@ -43,5 +55,13 @@ public class Book {
 
     public void setBookGenre(String bookGenre) {
         this.bookGenre = bookGenre;
+    }
+
+    public int getGenre_id() {
+        return genre_id;
+    }
+
+    public void setGenre_id(int genre_id) {
+        this.genre_id = genre_id;
     }
 }

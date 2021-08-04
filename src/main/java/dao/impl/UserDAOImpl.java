@@ -4,7 +4,9 @@ import dao.UserDAO;
 import entiti.User;
 
 import java.io.*;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 import static connection.Connection.getNumberOfRecords;
@@ -42,7 +44,20 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
-    public void viewAllUsers()  {
+    public void viewAllUsers() throws SQLException {
+
+        DAOConnection daoConnection = new DAOConnection();
+
+        String query = "select * from user";
+
+        Statement statement = daoConnection.getConnection().createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        while (resultSet.next()){
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("user_name");
+            int role_id = resultSet.getInt("role_id");
+            System.out.println(id + " : " + name + " : " + role_id);
+        }
        /* BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(USER_FILE_PATH));

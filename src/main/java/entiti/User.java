@@ -1,13 +1,22 @@
 package entiti;
 
 public class User {
-
+    private int id;
     private String userName;
-    private String userRole;
+    private int role_id;
 
-    public User(String userName, String userRole) {
+    public User(int id, String userName, int role_id) {
+        this.id = id;
         this.userName = userName;
-        this.userRole = userRole;
+        this.role_id = role_id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUserName() {
@@ -18,11 +27,11 @@ public class User {
         this.userName = userName;
     }
 
-    public String getUserRole() {
-        return userRole;
+    public int getRole_id() {
+        return role_id;
     }
 
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
+    public void setRole_id(int role_id) {
+        this.role_id = role_id;
     }
 }

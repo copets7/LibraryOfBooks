@@ -6,6 +6,9 @@ import entiti.User;
 
 import java.io.*;
 import java.nio.file.Path;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import static connection.Connection.getNumberOfRecords;
 import static connection.Connection.writeToFileOneLine;
@@ -35,7 +38,23 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public void viewAllBook() {
+    public void viewAllBook() throws SQLException {
+        DAOConnection daoConnection = new DAOConnection();
+
+        String query = "select * from book";
+
+        Statement statement = daoConnection.getConnection().createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        while (resultSet.next()){
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("bookName");
+            String author = resultSet.getString("author");
+            String isbn = resultSet.getString("ISBN");
+            int genre_id = resultSet.getInt("genre_id");
+            System.out.println(id + " : " + name +" : " + author +" : " + isbn + " : " + genre_id);
+        }
+
+
        /* BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(BOOKS_FILE_PATH));

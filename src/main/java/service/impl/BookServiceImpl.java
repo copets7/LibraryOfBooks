@@ -6,6 +6,7 @@ import entiti.Book;
 import service.BookService;
 
 import java.nio.file.Path;
+import java.sql.SQLException;
 
 public class BookServiceImpl implements BookService {
     private BookDAO bookDAO;
@@ -30,6 +31,10 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void viewAllBook() {
-    bookDAO.viewAllBook();
+        try {
+            bookDAO.viewAllBook();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

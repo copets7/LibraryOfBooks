@@ -7,6 +7,7 @@ import entiti.User;
 import service.UserService;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
@@ -27,6 +28,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void viewAllUsers() throws IOException {
-    userDAO.viewAllUsers();
+        try {
+            userDAO.viewAllUsers();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }
