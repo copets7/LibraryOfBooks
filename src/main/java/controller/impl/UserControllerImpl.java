@@ -6,6 +6,8 @@ import service.ServiceFactory;
 import service.UserService;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
 public class UserControllerImpl implements UserController {
     private UserService userService;
@@ -29,7 +31,7 @@ public class UserControllerImpl implements UserController {
     }
 
     @Override
-    public void viewAllUsers() throws IOException {
-    userService.viewAllUsers();
+    public List<User> viewAllUsers() throws IOException, SQLException {
+    return userService.viewAllUsers();
     }
 }

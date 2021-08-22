@@ -2,13 +2,13 @@ package dao;
 
 import entiti.User;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public interface UserDAO {
-    void addUser(User user);
+    User addUser(User user);
     void dellUser();
     void searchUser();
-    void viewAllUsers() throws IOException, SQLException;
+    List<User> viewAllUsers() throws IOException, SQLException;
 }

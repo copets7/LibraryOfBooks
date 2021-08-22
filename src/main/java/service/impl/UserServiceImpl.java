@@ -8,6 +8,7 @@ import service.UserService;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
@@ -27,11 +28,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void viewAllUsers() throws IOException {
-        try {
-            userDAO.viewAllUsers();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+    public List<User> viewAllUsers() throws IOException, SQLException {
+            return  userDAO.viewAllUsers();
     }
 }

@@ -1,35 +1,44 @@
 package dao.impl;
 
-import com.mysql.cj.jdbc.result.ResultSetImpl;
-
-import java.lang.reflect.InvocationTargetException;
-import java.sql.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Objects;
+import java.util.Properties;
 
 public class DAOConnection {
-    public static final String NAME_USER = "root";
-    public static final String PASSWORD = "70286CopetS";
-    public static final String URL = "jdbc:mysql://localhost:3306/myLibrary";
-    public static Connection connection;
-    public static Statement statement;
+    Connection connection;
 
-    public static Connection getConnection() {
-        return connection;
-    }
-    static {
+    public void getConnection(String propertyName) {
+        String driverClass;
+        String url;
+        String user;
+        String password;
+
         try {
-            connection = DriverManager.getConnection(URL,NAME_USER,PASSWORD);
-            System.out.println("Подключено");
-        }catch (SQLException throwables){
-            throwables.printStackTrace();
-            throw new RuntimeException();
+            String rootPath = Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResource("")).getPath();
+            String path = rootPath + propertyName + ".properties";
+
+            Properties dbProperties = new Properties();
+            dbProperties.load(new FileInputStream(path));
+            driverClass = dbProperties.getProperty("connection.driver_class");
+            url = dbProperties.getProperty("connection.url");
+            user = dbProperties.getProperty("connection.username");
+            password = dbProperties.getProperty("connection.password");
+            Class.forName(driverClass);
+            connection = DriverManager.getConnection(url, user, password);
+        } catch ( SQLException | ClassNotFoundException | IOException e) {
+            e.printStackTrace();
         }
     }
-    static {
+
+    public void closeConnection() {
         try {
-            statement = connection.createStatement();
-        }catch (SQLException throwables){
+            connection.close();
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
-            throw new RuntimeException();
         }
     }
 
