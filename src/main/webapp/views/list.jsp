@@ -1,5 +1,6 @@
 <%@ page import="entiti.User" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.time.LocalDateTime" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
@@ -9,12 +10,17 @@
 </head>
 
 <body class="w3-light-grey">
-<div class="w3-container w3-red w3-opacity w3-right-align">
+<div class="w3-container w3-red w3-opacity w3-center">
     <h3>Users list</h3>
 </div>
 </div>
+
+<div class="w3-container w3-blue w3-opacity w3-center">
+    <%= LocalDateTime.now()%>
+</div>
+
 <%
-    List<User> users = (List<User>) request.getAttribute("users");
+    List<User> users = (List) request.getAttribute("users");
 
     if (users != null && !users.isEmpty()) {
         out.println("<ul class=\"w3-ul\">");
@@ -33,7 +39,7 @@
 </div>
 
 <div class="w3-container w3-blue w3-opacity w3-right-align w3-padding">
-    <button class="w3-btn w3-green" onclick="location.href='/'">Back to main</button>
+    <button class="w3-btn w3-red" onclick="location.href='/'">Back to main</button>
 </div>
 </body>
 </html>

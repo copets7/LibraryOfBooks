@@ -18,7 +18,6 @@ import java.sql.SQLException;
 public class ListUsers extends HttpServlet {
     public ListUsers() {
     }
-
     UserController userController = new UserControllerImpl();
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -29,12 +28,5 @@ public class ListUsers extends HttpServlet {
             e.printStackTrace();
         }
         requestDispatcher.forward(req, resp);
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-
-
     }
 }

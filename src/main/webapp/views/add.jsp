@@ -1,3 +1,4 @@
+<%@ page import="java.time.LocalDateTime" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -6,8 +7,11 @@
 </head>
 
 <body class="w3-light-grey">
-<div class="w3-container w3-red w3-opacity w3-right-align">
-    <h3>Add user</h3>
+<div class="w3-container w3-red w3-opacity w3-center">
+    <h3>Add users</h3>
+</div>
+<div class="w3-container w3-blue w3-opacity w3-center">
+    <%= LocalDateTime.now()%>
 </div>
 <div class="w3-container w3-padding">
     <%
@@ -21,7 +25,7 @@
     %>
     <div class="w3-card-4">
         <div class="w3-container w3-center w3-red">
-            <h5>Add user</h5>
+            <h5>Add User</h5>
         </div>
         <form method="post" action="add" class="w3-selection w3-light-grey w3-padding">
             <label>User Name:
@@ -36,7 +40,7 @@
 </div>
 
 <div class="w3-container w3-blue w3-opacity w3-right-align w3-padding">
-    <button class="w3-btn w3-green" onclick="location.href='/'">Back to main</button>
+    <button class="w3-btn w3-red" onclick="location.href='/'">Back to main</button>
 </div>
 </body>
 </html>

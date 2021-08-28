@@ -34,5 +34,7 @@ public class AddUserServlet extends HttpServlet {
         String role = req.getParameter("role_id");
         User user = new User(userNAme, role);
         userController.addUser(user);
+        req.setAttribute("user", user);
+        doGet(req,resp);
     }
 }

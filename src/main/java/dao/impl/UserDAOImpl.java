@@ -54,7 +54,7 @@ public class UserDAOImpl extends DAOConnection implements UserDAO {
     }
 
     @Override
-    public List<User> viewAllUsers() throws SQLException {
+    public List<User> viewAllUsers() {
          getConnection("database");
          try {
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM user");
