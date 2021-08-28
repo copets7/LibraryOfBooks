@@ -9,12 +9,13 @@
 </head>
 
 <body class="w3-light-grey">
-<div class="w3-container w3-blue-grey w3-opacity w3-right-align">
-    <h1>Users list</h1>
+<div class="w3-container w3-red w3-opacity w3-right-align">
+    <h3>Users list</h3>
 </div>
 </div>
 <%
     List<User> users = (List<User>) request.getAttribute("users");
+
     if (users != null && !users.isEmpty()) {
         out.println("<ul class=\"w3-ul\">");
         for (User u : users) {
@@ -31,8 +32,8 @@
 %>
 </div>
 
-<div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">
-    <button class="w3-btn w3-round-large" onclick="location.href='/'">Back to main</button>
+<div class="w3-container w3-blue w3-opacity w3-right-align w3-padding">
+    <button class="w3-btn w3-green" onclick="location.href='/'">Back to main</button>
 </div>
 </body>
 </html>

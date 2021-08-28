@@ -15,7 +15,7 @@ public class UserDAOImpl extends DAOConnection implements UserDAO {
 
     @Override
     public User addUser(User user){
-        getConnection("myLibrary");
+        getConnection("database");
         Savepoint savepoint = null;
         List<String> values = Stream.of(user.getUserName(), user.getRole_id()).
                 map(String::valueOf).collect(Collectors.toList());
