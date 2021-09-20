@@ -1,8 +1,7 @@
 package dao;
 
-import entiti.Book;
+import entity.Book;
 
-import java.nio.file.Path;
 import java.sql.SQLException;
 
 public interface BookDAO {

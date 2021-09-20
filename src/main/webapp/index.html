@@ -6,15 +6,29 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
-<body class="w3-light-grey">
+<body class="w3-light-grey" >
+<style>
+    body{
+        margin: 0;
+        background-image: url(https://u.livelib.ru/reader/LynxLana/o/7om1jaz0/o-o.jpeg);
+        background-repeat: no-repeat;
+    }
+    button{
+        border-radius: 10px;
+    }
+</style>
 <div class="w3-container w3-yellow w3-opacity w3-center">
     <h1><b>LIBRARY</b></h1>
+    <script type="text/javascript">
+        document.write(Date());
+    </script>
 </div>
-
 <div class="w3-container w3-center">
     <div class="w3-bar w3-padding-large w3-padding-24">
-        <button class="w3-btn w3-hover-red w3-round-large" onclick="location.href='/list'"><b>List Users</b> </button>
-        <button class="w3-btn w3-hover-red w3-round-large" onclick="location.href='/add'"><b>Add User</b></button>
+        <button class="w3-cell-bottom w3-yellow " onclick="location.href='/list'"><b>List Users </b> </button>
+        <button class="w3-cell-bottom w3-yellow" onclick="location.href='/add'"><b>Add User</b></button>
+        <button class="w3-cell-bottom w3-yellow" onclick="location.href='/'"><b>List Books</b></button>
+        <button class="w3-cell-bottom w3-yellow" onclick="location.href='/'"><b>Add Book</b></button>
     </div>
 </div>
 </body>

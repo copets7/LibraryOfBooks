@@ -1,4 +1,4 @@
-package entiti;
+package entity;
 
 public class TypeGenre {
     private int id;

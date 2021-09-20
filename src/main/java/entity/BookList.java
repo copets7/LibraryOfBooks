@@ -1,4 +1,4 @@
-package entiti;
+package entity;
 
 public class BookList {
     private int book_id;

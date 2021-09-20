@@ -1,6 +1,5 @@
-<%@ page import="entiti.User" %>
+<%@ page import="entity.User" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.time.LocalDateTime" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
@@ -10,22 +9,33 @@
 </head>
 
 <body class="w3-light-grey">
-<div class="w3-container w3-red w3-opacity w3-center">
-    <h3>Users list</h3>
+<style>
+    body{
+        margin: 0;
+        background-image: url(https://u.livelib.ru/reader/LynxLana/o/7om1jaz0/o-o.jpeg);
+        background-repeat: no-repeat;
+    }
+    button{
+        border-radius: 10px;
+    }
+</style>
+<div class="w3-container w3-yellow w3-opacity w3-center">
+    <h1 class="w3-center">USERS LIST
+    <br>
+        <button class="w3-btn w3-red w3-left " onclick="location.href='/'">Back to main</button>
+    </h1>
 </div>
 </div>
 
-<div class="w3-container w3-blue w3-opacity w3-center">
-    <%= LocalDateTime.now()%>
-</div>
-
+<div class="w3-container w3-brown w3-opacity w3-center w3-padding">
 <%
+
     List<User> users = (List) request.getAttribute("users");
 
     if (users != null && !users.isEmpty()) {
         out.println("<ul class=\"w3-ul\">");
         for (User u : users) {
-            out.println("<li class=\"w3-hover-sand\">" + u + "</li>");
+            out.println("<li class=\"w3-hover-sand\">" + u + " <button type=\"submit\" name=\"button\" value=\"delete\">DELETE</button>" +"</li>" );
         }
         out.println("</ul>");
 
@@ -36,9 +46,9 @@
             "   <h5>There are no users yet!</h5>\n" +
             "</div>");
 %>
-</div>
 
-<div class="w3-container w3-blue w3-opacity w3-right-align w3-padding">
+</div>
+<div class="w3-container w3-yellow w3-opacity w3-right-align w3-padding">
     <button class="w3-btn w3-red" onclick="location.href='/'">Back to main</button>
 </div>
 </body>

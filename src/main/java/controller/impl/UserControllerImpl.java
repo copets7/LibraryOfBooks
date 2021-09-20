@@ -1,7 +1,7 @@
 package controller.impl;
 
 import controller.UserController;
-import entiti.User;
+import entity.User;
 import service.ServiceFactory;
 import service.UserService;
 
@@ -9,10 +9,10 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UserControllerImpl implements UserController {
+public class UserControllerImpl  implements UserController {
     private UserService userService;
 
-    public  UserControllerImpl() {
+    public  UserControllerImpl()  {
         this.userService = ServiceFactory.getInstance().getUserService();
     }
     @Override
@@ -21,8 +21,8 @@ public class UserControllerImpl implements UserController {
     }
 
     @Override
-    public void dellUser() {
-
+    public void dellUser(int id) {
+    userService.dellUser(id);
     }
 
     @Override

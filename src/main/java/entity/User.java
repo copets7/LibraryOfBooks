@@ -1,8 +1,16 @@
-package entiti;
+package entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "user_name")
     private String userName;
+    @Column(name = "role_id")
     private String role_id;
 
     public User( String userName, String role_id) {
@@ -41,8 +49,8 @@ public class User {
     public String toString() {
         return "User " +
                 "id=" + id +
-                "  [ userName = " + userName  +
-                ", role_id = " + role_id + "]"
+                "  [ User Name : " + userName  +
+                ", role : " + role_id + "]"
                 ;
     }
 }

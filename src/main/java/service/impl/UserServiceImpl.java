@@ -1,9 +1,8 @@
 package service.impl;
 
-import controller.UserController;
 import dao.DAOFactory;
 import dao.UserDAO;
-import entiti.User;
+import entity.User;
 import service.UserService;
 
 import java.io.IOException;
@@ -19,8 +18,8 @@ public class UserServiceImpl implements UserService {
         userDAO.addUser(user);
     }
 
-    public void dellUser() {
-
+    public void dellUser(int id) {
+    userDAO.dellUser(id);
     }
 
     public void searchUser() {

@@ -1,4 +1,4 @@
-package entiti;
+package entity;
 
 public class LogRecord {
     private int id;

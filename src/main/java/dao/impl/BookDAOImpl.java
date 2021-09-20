@@ -1,15 +1,9 @@
 package dao.impl;
 
 import dao.BookDAO;
-import entiti.Book;
-import entiti.User;
+import entity.Book;
 
-import java.io.*;
-import java.nio.file.Path;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-
 
 
 public class BookDAOImpl implements BookDAO {

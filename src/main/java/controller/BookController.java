@@ -1,8 +1,6 @@
 package controller;
 
-import entiti.Book;
-
-import java.nio.file.Path;
+import entity.Book;
 
 public interface BookController {
     void addBook(Book book);

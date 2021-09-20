@@ -2,10 +2,9 @@ package service.impl;
 
 import dao.BookDAO;
 import dao.DAOFactory;
-import entiti.Book;
+import entity.Book;
 import service.BookService;
 
-import java.nio.file.Path;
 import java.sql.SQLException;
 
 public class BookServiceImpl implements BookService {

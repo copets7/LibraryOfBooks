@@ -1,8 +1,6 @@
 package service;
 
-import entiti.Book;
-
-import java.nio.file.Path;
+import entity.Book;
 
 public interface BookService {
     void addBook(Book book);
